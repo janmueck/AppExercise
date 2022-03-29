@@ -1,0 +1,19 @@
+<h1>{% block title %} Link Shortener {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Link</label>
+        <input type="text" name="long"
+               placeholder="Your Link" class="form-control"
+               value="{{ request.form['long'] }}"></input>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Shorten</button>
+    </div>
+    {% if long and short%}
+        <div class="alert alert-success">
+            <p>Your link has been shortened to:</p>
+            <p><a href="{{ short }}">{{ short }}</a></p>
+        </div>
+    {% endif %}
+</form>
