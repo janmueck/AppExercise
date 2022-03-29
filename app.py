@@ -16,7 +16,7 @@ def shorten(url:str):
     return con.execute("SELECT id FROM urls WHERE url=?",(url,)).fetchone()[0]
 
 def expand(id:int):
-    '''expand the url by retrieving it from the database'''
+    '''expand the url by retrieving it from the database '''
     con = sqlite3.connect('example.db')
     return con.execute("SELECT url FROM urls WHERE id=?",(id,)).fetchone()[0]
 
